@@ -60,13 +60,13 @@ function play() {
 
 
 
-  function handleClick() {
-    console.log(this.querySelector('span') .innerText);
-    const num = this.querySelector('span') .innerText
-    this.classList.add('mycolor');
-    this.removeEventListener('click', handleClick);
+  // function handleClick() {
+  //   console.log(this.querySelector('span') .innerText);
+  //   const num = this.querySelector('span') .innerText
+  //   this.classList.add('mycolor');
+  //   this.removeEventListener('click', handleClick);
   
-  }
+  // }
 
   //celle
   function drawCell(num) {
@@ -123,18 +123,17 @@ function play() {
   // STABILIRE SE L'UTENTE HA VINTO O HA PERSO
   function gameOver() {
     console.log("gameOver");
-    const squares = document.getElementsByClassName("square");
     console.log(squares);
 
     for (i = 0; i < squares.length; i++) {
-      squares[i].removeEventListener("click", handleClick);
-      const num = squares.querySelector('span').innerText
+      squares[i].removeEventListener("click", scegli);
+      // const num = squares.querySelector('span').innerText
       console.log(num);
       //se i+1 é nell'array delle bombe le scoperchiamo
       //if square [i] == bomsPosition
       // let num = i + 1;
-      // if (bombsPosition.includes(num)) {
-      //   squares[i].classList.add("red");
+      if (bombsPosition.includes(num)) {
+        squares[i].classList.add("red");
       }
     }
 
@@ -144,7 +143,7 @@ function play() {
       console.log("HAI PERSO");
     }
   }
-
+}
 
 // EVENTO CLICK CHE ATTIVA IL GIOCO
 playbutton.addEventListener("click", play);
