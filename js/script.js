@@ -23,6 +23,8 @@ const playbutton = document.getElementById("play");
 // FUNZIONE PRICIPALE PLAY
 function play() {
   console.log("Inizio...");
+  document.getElementById("risultato").innerText = "";
+  
 
   const NUM_BOMB = 16;
   const bombsPosition = [];
@@ -58,14 +60,12 @@ function play() {
   }
   console.log(bombsPosition);
 
-
-
   // function handleClick() {
   //   console.log(this.querySelector('span') .innerText);
   //   const num = this.querySelector('span') .innerText
   //   this.classList.add('mycolor');
   //   this.removeEventListener('click', handleClick);
-  
+
   // }
 
   //celle
@@ -84,19 +84,17 @@ function play() {
     cell.addEventListener("click", scelta);
 
     return cell;
+  }
   // FUNZIONE DI SCELTA
   function scelta() {
-    // let num = this.innerText;
-    // console.log(num);
+    let num = this.innerText;
     this.removeEventListener("click", scelta);
-
-    if (!bombsPosition.includes(num)) {
+    if (!bombsPosition.includes(parseInt(num))) {
       this.classList.add("mycolor");
       this.innerHTML = `
           <span>${num}</span>
       `;
       score++;
-      console.log(score);
 
       if (score === MAX_ATTEMPT) {
         gameOver();
@@ -106,7 +104,6 @@ function play() {
       gameOver();
     }
   }
-}
 
   // CAMPO DI GIOCO
   function drawGrid() {
@@ -123,24 +120,25 @@ function play() {
   // STABILIRE SE L'UTENTE HA VINTO O HA PERSO
   function gameOver() {
     console.log("gameOver");
-    console.log(squares);
-
+    const squares = document.getElementsByClassName("square");
     for (i = 0; i < squares.length; i++) {
-      squares[i].removeEventListener("click", scegli);
-      // const num = squares.querySelector('span').innerText
-      console.log(num);
+      squares[i].removeEventListener("click", scelta);
+      const num = squares[i].querySelector("span").innerText;
+
       //se i+1 é nell'array delle bombe le scoperchiamo
       //if square [i] == bomsPosition
       // let num = i + 1;
-      if (bombsPosition.includes(num)) {
+      if (bombsPosition.includes(parseInt(num))) {
         squares[i].classList.add("red");
       }
     }
 
     if (score === MAX_ATTEMPT) {
       console.log("HAI VINTO");
+      document.getElementById("risultato").innerText = `Hai Vinto! Punteggio: ${score}`;
     } else {
       console.log("HAI PERSO");
+      document.getElementById("risultato").innerText = `Hai Perso! Punteggio: ${score}`;
     }
   }
 }

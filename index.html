@@ -18,24 +18,27 @@
   <body>
     <div class="vh-100">
       <!-- HEADER  -->
-      <header
-        class="d-flex align-items-center text-white"
-      >
-        <h3>Logo</h3>
-        <button id="play" class="m-3 rounded-3">Play</button>
-        <select class="form-control" name="livello" id="livello">
-          <option value="1">Easy</option>
-          <option value="2">Medium</option>
-          <option value="3">Hard</option>
-        </select>
+      <header class="d-flex align-items-center text-white justify-content-between">
+          <h3 class="d-inline">Logo</h3>
+        <div class="d-flex justify-content-around">
+          <button id="play" class="m-3 rounded-3 btn btn-primary">Play</button>
+          <select class="form-control " name="livello" id="livello">
+            <option value="1">Easy</option>
+            <option value="2">Medium</option>
+            <option value="3">Hard</option>
+          </select>
+        </div>
       </header>
       <!-- MAIN  -->
       <main>
         <h2 class="text-center text-white pt-4">
           Seleziona la difficoltá e clicca il tasto play per iniziare la partita
         </h2>
-        <div class="d-flex justify-content-center align-items-center pt-5">
+        <div
+          class="d-flex flex-column justify-content-center align-items-center pt-5"
+        >
           <div id="field-game" class="d-flex mycolor"></div>
+          <h3 id="risultato" class="text-white"></h3>
         </div>
       </main>
       <!-- FOOTER  -->

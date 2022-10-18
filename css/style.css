@@ -38,3 +38,12 @@ main {
 .red {
   background-color: red;
 }
+
+#livello{
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  height: 40px;
+  margin-top: 15px;
+}
+
