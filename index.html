@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/libreria.js"></script>
+    <title>Campo Minato</title>
+  </head>
+  <body>
+    <div class="vh-100">
+      <!-- HEADER  -->
+      <header
+        class="d-flex align-items-center text-white"
+      >
+        <h3>Logo</h3>
+        <button id="play" class="m-3 rounded-3">Play</button>
+        <select class="form-control" name="livello" id="livello">
+          <option value="1">Easy</option>
+          <option value="2">Medium</option>
+          <option value="3">Hard</option>
+        </select>
+      </header>
+      <!-- MAIN  -->
+      <main>
+        <h2 class="text-center text-white pt-4">
+          Seleziona la difficoltá e clicca il tasto play per iniziare la partita
+        </h2>
+        <div class="d-flex justify-content-center align-items-center pt-5">
+          <div id="field-game" class="d-flex mycolor"></div>
+        </div>
+      </main>
+      <!-- FOOTER  -->
+      <footer class="text-center pt-4">
+        <div class="text-white">Powered by: Boolean Giovanni Andresini</div>
+      </footer>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

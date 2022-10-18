@@ -1,0 +1,40 @@
+main {
+  height: calc(100vh - 160px);
+  overflow-y: auto;
+}
+
+header,
+footer {
+  background-color: black;
+  height: 80px;
+}
+main {
+  background-color: #141d26;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 500px;
+  height: 500px;
+  /* background-color: rgb(105, 155, 85); */
+  background-color: lightblue;
+}
+
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.mycolor {
+  background-color: blue;
+  transition: 0.4s;
+}
+
+.red {
+  background-color: red;
+}
